@@ -1,129 +1,61 @@
 <!DOCTYPE HTML>
 <!--
- Telephasic by HTML5 UP
- html5up.net | @ajlkn
- Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Telephasic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
- <head>
-  <title></title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="assets/css/main.css" />
- </head>
- <body class="no-sidebar is-preload" onload = "getLocation()">
-  <div id="top-bar">
-  <div id="page-wrapper">
-   <!-- Header -->
-    
-    <div id="header-wrapper">
-     <div id="header" class="container">
- 
-      <!-- Logo -->
-       <h1 id="logo"><a href="#"></a></h1>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	
+	<body class="homepage is-preload">
+		
 
-      <!-- Nav -->
-       <nav id="nav">
-        <ul> 
-         <li><a href="#">one</a></li>
-         <li class="active"><a href="#">two</a></li>       
-         <li><a href="#">three</a></li> 
-         <li><a href="#">four</a></li>
-         <li><a href="#">five</a></li>
-         <li><a href="#">six</a></li>
-         <li><a href="#">seven</a></li>
-         <li><a href="#">eight</a></li>
-        </ul>
-       </nav>
-       
-     </div>
-    
-    </div>
-   
-   <!-- Main -->
-    <div class="wrapper">
-     <div class="container" id="main">
+			<!-- Header -->				
+				<div id="header-wrapper">
+					<div id="header" class="container">
 
-      <div id='printoutPanel'></div>
-            
-                          <div id='myMap' style='width: 100vw; height: 100vh;'></div>
+						
+						<!-- Nav -->
+                        <nav id="nav">
+							<ul>	
+								<li class="active"><a href="withbar_Jimmy02test.html">尋跡</a></li>
+								<li><a href="postcards.html">集冊</a></li>
+							</ul>
+						</nav>
+					</div>
 
-      </div>
-    </div>
+					<!-- Hero -->
+						<section id="hero" class="container">
+							<header>
+								<h2 style="font-size:10vmin;color:#000088;"><img src="images/Title.png" style="height:35vh;width:80vw;"></h2>
+							</header>
+							<font style="font-size:5vmin;color:	#66009D;">
+							Edit by Team JRT_DM
+							</font>
+							<br><br><br>
 
-   <!-- Footer -->
-    
-     
-     <div id="copyright" class="container">
-      <ul class="menu">
-       <li>&copy; All rights reserved.</li>
-      </ul>
-     </div>
-    
+						<ul class="actions">
+							<li><a href="withbar_Jimmy02test.html" class="button">Let's Start!</a></li>
+						</ul>
+						</section>
+				<div style="height:150px; width:100%;"></div>
+				</div>
+				
+				
+				
 
-  </div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-        <script type='text/javascript'> 
-            //var latitude;
-            //var longitude;
-            var map;
-            var latitude;
-            var longitude;
-        
-
-                function loadMapScenario(position) {
-                    map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
-                        /* No need to set credentials if already passed in URL */
-                        center: new Microsoft.Maps.Location(position.coords.latitude,position.coords.longitude), zoom:15 });
-                    var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null);
-                    //map.entities.push(pushpin);
-     var layer = new Microsoft.Maps.Layer();  
-     layer.add(pushpin);
-     map.layers.insert(layer);
-                }
-
-                
-                //var x = document.getElementById("demo");
-                function getLocation() {
-                    if (navigator.geolocation) {
-                    watchID = navigator.geolocation.watchPosition(showPosition);
-                    navigator.geolocation.getCurrentPosition(loadMapScenario);
-                    } else {
-                        x.innerHTML = "Geolocation is not supported by this browser.";
-                    }
-                }
-                function showPosition(position) {
-                    latitude=position.coords.latitude ;
-                    longitude=position.coords.longitude;
-                    //loadMapScenario(latitude,longitude);
-                    //map.Children.Remove(pushpin);
-                    if(((latitude-24.78751536615579)^2+(longitude-120.9972801735342)^2)^(1/2)){
-                    var info_location = new Microsoft.Maps.Location(24.78751536615579, 120.9972801735342);
-                    var infobox = new Microsoft.Maps.Infobox(info_location, { maxHeight: 300, maxWidth: 420, title: 'my photo',
-                        description: '<img src="photo01.jpg" width="154" height="274" ></img>' });
-                    infobox.setMap(map);
-                        }
-
-                    pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(latitude,longitude), null);
-                    layer.remove(pushpins[0]);
-     layer.add(pushpin);
-     map.layers.insert(layer);
-     
-                }
-    
-    
-                    
-        
-                </script>
-            <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AtXOEuqsKx4q3bLqR9Yd1mC-hOz5TrSEv0Y4bMAC8Frj8nKLxUXw8fHQObAjFcGn&callback=loadMapScenario' async defer> </script>
-        
-  <!-- Scripts -->
-   <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/jquery.dropotron.min.js"></script>
-   <script src="assets/js/browser.min.js"></script>
-   <script src="assets/js/breakpoints.min.js"></script>
-   <script src="assets/js/util.js"></script>
-   <script src="assets/js/main.js"></script>
-
- </body>
+	</body>
 </html>

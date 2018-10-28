@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<!--
+	Telephasic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="no-sidebar is-preload" onload = "getLocation()">
+		<div id="top-bar">
+		<div id="page-wrapper">
+			<!-- Header -->
+				
+				<div id="header-wrapper">
+					<div id="header" class="container">
+	
+						<!-- Logo -->
+							<h2 id="logo"><a href="#">尋跡</a></h2>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>	
+									<li class="active"><a href="withbar_Jimmy02test.html">尋跡</a></li>
+									<li><a href="postcards.html">集冊</a></li>
+								</ul>
+							</nav>
+							
+					</div>
+				
+				</div>
+			
+			<!-- Main -->
+				<div class="wrapper">
+					<div class="container" id="main">
+
+						<div id='printoutPanel'></div>
+            
+                          <div id='myMap' style='width: 100vw; height: 100vh;'></div>
+
+						</div>
+				</div>
+
+			
+
+		</div>
+
+        <script type='text/javascript'> 
+            //var latitude;
+            //var longitude;
+            var map;
+            var latitude;
+            var longitude;
+        
+
+                function loadMapScenario(position) {
+                    map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+                        /* No need to set credentials if already passed in URL */
+                        center: new Microsoft.Maps.Location(position.coords.latitude,position.coords.longitude), zoom:15 });
+                    var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null);
+                    map.entities.push(pushpin);
+                }
+
+                
+                //var x = document.getElementById("demo");
+				function getLocation() {
+                    if (navigator.geolocation) {
+                    watchID = navigator.geolocation.watchPosition(showPosition);
+                    navigator.geolocation.getCurrentPosition(loadMapScenario);
+                    } else {
+                        x.innerHTML = "Geolocation is not supported by this browser.";
+                    }
+                }
+                function showPosition(position) {
+                    latitude=position.coords.latitude ;
+                    longitude=position.coords.longitude;
+                    //loadMapScenario(latitude,longitude);
+                    //map.Children.Remove(pushpin);
+                    if((x<=24.78851536615579||x>=24.78651536615579)&&(y>=120.9962801735342||y<=120.9982801735342)){
+                    var info_location = new Microsoft.Maps.Location(24.78751536615579, 120.9972801735342);
+                    var infobox = new Microsoft.Maps.Infobox(info_location, { maxHeight: 300, maxWidth: 420, title: '小木屋',
+                        description: '<img src="photo01.jpg" width="154" height="274" ></img>' });
+                    infobox.setMap(map);
+                        }
+                    pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(latitude,longitude), null);
+                    map.entities.push(pushpin);
+                }
+
+    
+                    
+        
+                </script>
+            <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AtXOEuqsKx4q3bLqR9Yd1mC-hOz5TrSEv0Y4bMAC8Frj8nKLxUXw8fHQObAjFcGn&callback=loadMapScenario' async defer> </script>
+        
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
